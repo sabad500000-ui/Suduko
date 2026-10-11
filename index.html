@@ -1,0 +1,66 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>سرزمین جادویی سودوکو کودکان</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="game-container">
+    <div class="coins-rain" id="coinsContainer"></div>
+
+    <!-- هدر -->
+    <div class="header">
+      <div class="title">✨ سودوکوی من</div>
+      <div class="level-badge" id="levelName">کلاس دوم (ساده)</div>
+    </div>
+
+    <!-- انتخاب سطح -->
+    <div class="difficulty-selector">
+      <button class="diff-btn active" data-diff="easy">🌱 آسان (۴×۴)</button>
+      <button class="diff-btn" data-diff="medium">⭐ متوسط (۶×۶)</button>
+      <button class="diff-btn" data-diff="hard">🚀 سخت (۹×۹)</button>
+    </div>
+
+    <!-- آمار -->
+    <div class="stats-bar">
+      <div class="stat-item">⏱️ <span id="timerText">۰۰:۰۰</span></div>
+      <div class="stat-item">❌ خطا: <span id="mistakesText">۰</span></div>
+      <div class="stat-item">🪄 راهنما: <span id="hintsText">۳</span></div>
+    </div>
+
+    <!-- کنترل‌ها -->
+    <div class="controls">
+      <button class="btn btn-start" id="startBtn" onclick="togglePlayState()">▶️ شروع بازی</button>
+      <button class="btn btn-action" onclick="prepareNewGame()">🎲 جدول تازه</button>
+      <button class="btn btn-action" onclick="useHint()">🪄 راهنما</button>
+    </div>
+
+    <!-- زمین بازی -->
+    <div class="board-wrapper">
+      <div class="sudoku-grid" id="board"></div>
+    </div>
+
+    <!-- کیبورد اعداد -->
+    <div class="numpad" id="numpad"></div>
+
+    <!-- مودال برنده شدن -->
+    <div class="modal-overlay" id="winModal">
+      <div class="modal-content">
+        <div class="modal-stars">⭐⭐⭐</div>
+        <div class="modal-title">آفرین قهرمان!</div>
+        <div class="modal-sub" id="winSummary">جدول رو کامل و درست حل کردی!</div>
+        <button class="btn btn-start" style="width: 100%;" onclick="prepareNewGame()">جدول بعدی 🎲</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
